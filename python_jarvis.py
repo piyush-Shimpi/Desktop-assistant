@@ -35,13 +35,16 @@ def wishMe():
     speak("I am Jarvis Sir. Please tell me how may I help you")       
 
 def takeCommand():
+   #if you your microphone is not working remove line 39 and 40 as comment and add 42 to 47 as comment
+   # r = input("Enter the task \n") 
+   # query = r
+    
     #It takes microphone input from the user and returns string output
-
-    # r = sr.Recognizer()
-    # with sr.Microphone() as source:
-    #     print("Listening...")
-    #     r.pause_threshold = 1
-    #     audio = r.listen(source)
+     r = sr.Recognizer()
+     with sr.Microphone() as source:
+         print("Listening...")
+         r.pause_threshold = 1
+         audio = r.listen(source)
     
     r = input("Enter the task \n") 
     query = r
