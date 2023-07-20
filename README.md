@@ -9,3 +9,8 @@ If the assistant is unable to understand your command, it will ask you to rephra
 The assistant is a great way to control your computer without having to use your hands.
 It is also a fun way to learn about Python programming.
 I hope you enjoy using this desktop assistant!
+
+Important points to remember
+this assistant is made for personal use therefore directories and file path are accord to my device,so while you use it error may occour
+for weather report you need to generate your own personal API key for result otherwise program will be crash
+this is not fully develope program so errors might take place
