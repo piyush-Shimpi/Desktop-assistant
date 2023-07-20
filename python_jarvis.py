@@ -46,8 +46,8 @@ def takeCommand():
          r.pause_threshold = 1
          audio = r.listen(source)
     
-    r = input("Enter the task \n") 
-    query = r
+     
+    
     try:
         print("Recognizing...")    
         query = r.recognize_google(audio, language='en-in')
