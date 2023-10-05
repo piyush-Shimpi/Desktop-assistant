@@ -1,16 +1,51 @@
-# Desktop-assistant
-This desktop assistant is a Python script that can be used to control your computer with voice commands. It can perform a variety of tasks, such as setting alarms, opening Google, YouTube, and music, and opening any folder on your computer. The assistant is still under development, but it is already capable of performing many useful tasks. 
-This desktop assistant is a Python script that can be used to control your computer with voice commands.
-It can perform a variety of tasks, such as setting alarms, opening Google, YouTube, and music, and opening any folder on your computer.
-The assistant is still under development, but it is already capable of performing many useful tasks.
-To use the assistant, simply speak a command into your microphone.
-The assistant will then attempt to carry out your command.
-If the assistant is unable to understand your command, it will ask you to rephrase it.
-The assistant is a great way to control your computer without having to use your hands.
-It is also a fun way to learn about Python programming.
-I hope you enjoy using this desktop assistant!
+#Personal Desktop Assistant
 
-Important points to remember
-this assistant is made for personal use therefore directories and file path are accord to my device,so while you use it error may occour
-for weather report you need to generate your own personal API key for result otherwise program will be crash
-this is not fully develope program so errors might take place
+This is a personal desktop assistant that can perform a variety of tasks, including:
+
+Wikipedia search
+Opening websites
+Playing music
+Telling time
+Opening Visual Studio Code
+Sending emails
+Searching on Google
+Opening files
+Getting weather information
+Making notes
+Setting alarms
+
+
+#In this project various Modules used are:
+pyttsx3
+speech_recognition
+wikipedia
+requests
+winsound
+webbrowser
+datetime
+os
+smtplib
+json
+
+
+#Features:
+Wikipedia search: The assistant can search Wikipedia for information on a given topic.
+Opening websites: The assistant can open any website in the user's default web browser.
+Playing music: The assistant can play music from the user's local music library.
+Telling time: The assistant can tell the user the current time.
+Opening Visual Studio Code: The assistant can open Visual Studio Code, a popular code editor.
+Sending emails: The assistant can send emails on behalf of the user.
+Searching on Google: The assistant can search the web using Google.
+Opening files: The assistant can open any file on the user's computer.
+Getting weather information: The assistant can get the current weather conditions for a given city.
+Making notes: The assistant can create and save notes.
+Setting alarms: The assistant can set alarms that will go off at a specified time.
+
+
+#To use the assistant:
+Start the assistant by running the main.py file.
+The assistant will greet you and ask what you would like to do.
+Give the assistant a command, such as "Search Wikipedia for [topic]" or "Play music."
+The assistant will execute your command and give you the desired results.
+
+
