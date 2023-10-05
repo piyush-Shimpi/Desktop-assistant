@@ -2,17 +2,17 @@
 
 This is a personal desktop assistant that can perform a variety of tasks, including:
 
-Wikipedia search
-Opening websites
-Playing music
-Telling time
-Opening Visual Studio Code
-Sending emails
-Searching on Google
-Opening files
-Getting weather information
-Making notes
-Setting alarms
+Wikipedia search,
+Opening websites,
+Playing music,
+Telling time,
+Opening Visual Studio Code,
+Sending emails,
+Searching on Google,
+Opening files,
+Getting weather information,
+Making notes,
+Setting alarms.
 
 
 #In this project various Modules used are:
