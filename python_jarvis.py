@@ -1,4 +1,4 @@
-# Personal Deskstop Assistance
+# Personal Desktop Assistance
 
 import pyttsx3 #pip install pyttsx3
 import speech_recognition as sr #pip install speechRecognition
@@ -32,36 +32,47 @@ def wishMe():
     else:
         speak("Good Evening!")  
 
-    speak("I am Jarvis Sir. Please tell me how may I help you")       
+    speak("I am Jarvis Sir . I am a Personal desktop assistant")        
+    speak("Please tell me how may I help you.")
+    speak("If you dont know how to use a desktop assistant") 
+    speak("just speak word information to get all details.")
+
 
 def takeCommand():
-   #if you your microphone is not working remove line 39 and 40 as comment and add 42 to 47 as comment
-   # r = input("Enter the task \n") 
-   # query = r
-    
+   #if you your microphone is not working still ou can use this using inputs
+        r = input("Enter the task \n") 
+        query = r
+         
     #It takes microphone input from the user and returns string output
-     r = sr.Recognizer()
-     with sr.Microphone() as source:
-         print("Listening...")
-         r.pause_threshold = 1
-         audio = r.listen(source)
+    #  r = sr.Recognizer()
+    #  with sr.Microphone() as source:
+    #     print("Listening...")
+    #     r.pause_threshold = 1
+    #     audio = r.listen(source)
     
      
     
-    try:
-        print("Recognizing...")    
-        query = r.recognize_google(audio, language='en-in')
-        print(f"User said: {query}\n")
+        # try:
+        #     print("Recognizing...")    
+        #     query = r.recognize_google(audio, language='en-in')
+        #     print(f"User said: {query}\n")
 
-    except Exception as e:
-        print(e)    
-        print("Say that again please...")  
-        return "None"
-    return query
+        # except Exception as e:
+        #     print(e)    
+        #     print("Say that again please...")  
+        #     return "None"
+        return query
 
 def make_note():
-    speak("what should I write?")
-    note_content = takeCommand()
+    
+    speak("press1 for voice command press2 for write command")
+    user = int(input("Enter option:"))
+    if user == 1:
+        speak("what should I write?")
+        note_content = takeCommand()
+    else:
+        speak("what should I write?")
+        note_content=input("")
     with open("notes.txt","a") as file:
         file.write(note_content + "\n")
     speak("The note is successfully written")
@@ -84,7 +95,7 @@ def get_weather(city):
         main_info = data["weather"][0]["main"]
         descripton = data["weather"][0]["main"]
         temperature = data["main"]["temp"]
-        speak(f"currently, the weather in {city} is {main_info}.the temperature is {temperature} kelvin")
+        speak(f"currently, the weather in {city} is {main_info}.the temperature is {temperature} kelvin.")
     else:
         speak("Sorry i couldn't fetch the weather information")
 
@@ -94,13 +105,23 @@ def set_alarm(time):
 
     while current_time != alarm_time.strptime(time,"%H:%M"):
         current_time = datetime.datetime.now().strptime(time,"%H:%M")
+        frequency = 2500
+        duration = 1000 #milisecond
+        winsound.Beep(frequency,duration)
+    speak("Alarm is set!")
 
-    frequency = 2500
-    duration = 2000 #milisecond
+   
 
-    winsound.Beep(frequency,duration)
-    speak("Alarm!")
-
+def quit():
+    speak("Thanks for using Jarvis")
+    speak("have a nice day")
+    
+def my_info():
+    speak("I am a model which is build using python")
+    speak("several python modules were use to build as i can perform various task.")
+    speak("telling current time , weather, sending emails , setting an alarm, make notes and store them.")
+    speak("I can also provide quick web search")    
+    speak("just tell the operation you want to perform i will execute it for you")
 
 #main function
 
@@ -139,7 +160,7 @@ if __name__ == "__main__":
             speak(f"Sir, the time is {strTime}")
 
         elif 'open code' in query:
-            codePath = "C:\\Users\\admin\\Code.exe"
+            codePath = "D:\Piyush Btech\Microsoft VS Code\code.exe"
             os.startfile(codePath)
 
         elif 'email to piyush' in query:
@@ -164,9 +185,13 @@ if __name__ == "__main__":
             os.startfile(file_path)
 
         elif 'weather' in query:
-            speak("Sure! please tell me the name of your city?")
-            city_name = takeCommand()
-            get_weather(city_name)
+            try:
+                speak("Sure! please tell me the name of your city?")
+                city_name = takeCommand()
+                get_weather(city_name)
+            except Exception as z :
+                print(z)
+                speak("you are not connected to a network")
 
         elif 'make a note' in query:
             speak("sure! tell what to note.")
@@ -176,3 +201,10 @@ if __name__ == "__main__":
             speak("Alright sir, for when?")
             tell_time = takeCommand()
             set_alarm(tell_time)
+        
+        elif 'information' in query:
+            my_info()           
+        
+        elif 'quit' in query:
+            quit()
+            break
